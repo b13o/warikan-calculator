@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+<img width="1440" alt="スクリーンショット 2024-10-25 19 08 15" src="https://github.com/user-attachments/assets/2e0b5a6a-aa5e-4ff7-b066-06e1846543ac" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 割り勘計算機
 
-Currently, two official plugins are available:
+## 概要
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+このプロジェクトでは、割り勘アプリを構築します。  
+メンバーを登録し、支払い記録を入力することで、最適な精算方法を画面に表示します。
 
-## Expanding the ESLint configuration
+## 学習目標
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Zustand を使用したグローバルな状態管理について、学習します。
 
-- Configure the top-level `parserOptions` property like this:
+複数のコンポーネント間で状態を共有する設計や、useContext との違いについて、確認してください。
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### 推奨技術
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+このプロジェクトの難易度と趣旨を踏まえて、以下の使用をお勧めします。
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Zustand を用いたグローバルな状態管理
+- Vite を用いた React 環境構築
+- TypeScript による型チェック
+- Tailwind CSS を用いたスタイリング
+- GitHub Pages へのデプロイ
+- 複雑なロジックを分離させるカスタムフック
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+---
+
+## 🎯 お題
+
+- 「ユーザーストーリー」を全て満たすアプリを構築してください。
+- 必要に応じて、スクリーンショットやデモサイトの URL を参照してください。
+- スタイルは、あなた自身で独自にカスタマイズすることが可能です。
+
+### 必須機能
+
+1. **メンバー登録**：
+   - 割り勘を行うメンバーを追加し、表示する。
+2. **支払い記録**：
+   - 立て替えた人、金額、内容を記録・削除する。
+3. **精算結果の算出**：
+   - 最適な精算方法を表示する（例：誰が誰にいくら払うべきか）
+
+---
+
+## ユーザーストーリー
+
+- [ ] ユーザーがサイトにアクセスすると、メンバーの名前を入力できるフォームがが表示されている。
+- [ ] 追加したメンバーの名前が、全員表示される
+- [ ] ユーザーが支払い記録を追加する際は、支払った人をドロップダウンリストから選択できる
+- [ ] 支払い内容（テキスト）と金額（数値）を入力できる
+- [ ] 必要な情報を入力し、「**_記録する_**」ボタンをクリックすると、支払いの記録が一覧で表示される
+- [ ] 支払い記録を削除できる
+- [ ] 最適な精算方法として「誰が誰にいくら払えば良いか」が一覧で表示される
+- [ ] アプリケーションがデプロイされており、誰でもアクセス可能である。
